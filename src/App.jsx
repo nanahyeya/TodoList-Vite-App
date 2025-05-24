@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 import TodoListTemplate from './components/TodoListTemplate';
@@ -43,7 +43,7 @@ class App extends Component {
   };
 
   render() {
-    const { todo } = this.state;
+    const { todo, todos } = this.state;
     const { handleChange, handleCreate, handleEnter } = this;
 
     return (
@@ -54,7 +54,7 @@ class App extends Component {
         myChange={handleChange}
         myCreate={handleCreate} />
       }>
-        <TodoItemList />
+        <TodoItemList myTodos={todos} />
       </TodoListTemplate>
     );
   } //render
