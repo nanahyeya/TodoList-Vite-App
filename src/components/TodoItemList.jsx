@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
@@ -12,4 +13,9 @@ class TodoItemList extends Component {
         );
     }
 }
+TodoItemList.propTypes = {
+    todos: PropTypes.array,
+    myToggle: PropTypes.func,
+    myRemove: PropTypes.func
+};
 export default TodoItemList;

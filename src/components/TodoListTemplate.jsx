@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import './TodoListTemplate.css';
 
 const TodoListTemplate = ({ form, children }) => {
@@ -16,4 +16,10 @@ const TodoListTemplate = ({ form, children }) => {
         </main>
     );
 };
+
+TodoListTemplate.propTypes = {
+    form: PropTypes.element,
+    children: PropTypes.node
+};
+
 export default TodoListTemplate;
