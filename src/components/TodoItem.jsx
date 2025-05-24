@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import './TodoItem.css';
 
 class TodoItem extends Component {
@@ -21,4 +22,13 @@ class TodoItem extends Component {
         );
     }
 }
+
+TodoItem.propTypes = {
+    text: PropTypes.string,
+    checked: PropTypes.bool,
+    id: PropTypes.number,
+    onToggle: PropTypes.func,
+    onRemove: PropTypes.func
+};
+
 export default TodoItem
