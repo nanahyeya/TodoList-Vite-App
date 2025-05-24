@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
+    /* 
+        true(myTodos 변수에 변동이 있으면) render() 호출
+        false(myTodos 변수에 변동이 없으면) render() 호출 안함. 렌더링 생략
+    */
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.myTodos !== nextProps.myTodos;
+    }
+
     render() {
         const { myTodos, myToggle, myRemove } = this.props;
         const todoList = myTodos.map(
