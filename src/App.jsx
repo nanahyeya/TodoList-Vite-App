@@ -42,9 +42,17 @@ class App extends Component {
     }
   };
 
+  handleToggle = (id) => {
+    const { todos } = this.state;
+
+    this.setState({
+    todos: todos.map(todo => todo.id === id ? { ...todo, checked: !todo.checked } : todo)
+    });
+  }
+
   render() {
     const { todo, todos } = this.state;
-    const { handleChange, handleCreate, handleEnter } = this;
+    const { handleChange, handleCreate, handleEnter, handleToggle } = this;
 
     return (
       <TodoListTemplate form=
@@ -54,7 +62,7 @@ class App extends Component {
         myChange={handleChange}
         myCreate={handleCreate} />
       }>
-        <TodoItemList myTodos={todos} />
+        <TodoItemList myTodos={todos} myToggle={handleToggle} />
       </TodoListTemplate>
     );
   } //render
